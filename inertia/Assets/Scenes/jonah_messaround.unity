@@ -437,6 +437,7 @@ MonoBehaviour:
   sprintSpeed: 12
   airSpeedMultiplier: 0.3
   wallJumpSpeedMult: 3
+  walljumpNormalMagnitude: 0.5
   normalGravity: -30
   wallRunGravity: -1
   jumpHeight: 5
