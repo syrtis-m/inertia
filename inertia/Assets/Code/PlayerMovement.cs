@@ -1,11 +1,22 @@
 //Adopted from https://www.youtube.com/watch?v=55WCcJi79QM&t=0s
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 {
+    //we inherit from Controls.IPlayerActions so we can use SetCallbacks()
+    
+    //UNITY input actions (controls.cs)
+    private Controls controls; 
+    private Vector2 MouseDelta;
+    private Vector2 MoveComposite;
+    private Action OnJumpPerformed;
     CharacterController controller;
+    
     public Transform groundCheck;
 
     public LayerMask groundMask;
@@ -20,9 +31,11 @@ public class PlayerMovement : MonoBehaviour
 
     public float runSpeed;
     public float sprintSpeed;
-    public float airSpeedMultiplier;
+    public float airSpeedMultiplier; //slows you down when you're in midair
+    public float wallJumpSpeedMult; //impacts how flat the parabola of jumping off is
+    public float walljumpNormalMagnitude = 1f; //how much sideways you go when you jump off a wall (magnitude modifier for normal vector)
 
-    float gravity;
+    private float gravity;
     public float normalGravity;
     public float wallRunGravity;
     public float jumpHeight;
@@ -58,6 +71,55 @@ public class PlayerMovement : MonoBehaviour
     public float wallRunTilt;
     public float tilt;
 
+    /////// unity input stuff ///////
+    private void OnEnable()
+    {
+        if (controls != null)
+            return;
+
+        controls = new Controls();
+        controls.Player.Enable();
+        controls.Player.SetCallbacks(this); //this lets OnLook OnMove OnJump work
+    }
+    public void OnDisable()
+    {
+        controls.Player.Disable();
+    }
+    
+    //On[ACTION] for each Action in the InputAction Asset
+    public void OnLook(InputAction.CallbackContext context)
+    { //currently isn't used for camera controls.
+        MouseDelta = context.ReadValue<Vector2>();
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        MoveComposite = context.ReadValue<Vector2>();
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+        if (jumpCharges > 0)
+        {
+            Jump();
+        }
+    }
+
+    public void OnSprint(InputAction.CallbackContext context)
+    {//https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/Interactions.html
+        var held = context.control.IsPressed();
+        if (held && isGrounded)
+        {
+            isSprinting = true;
+        }
+        else
+        {
+            isSprinting = false;
+        }
+    }
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -78,7 +140,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        HandleInput();
+        input = new Vector3(MoveComposite.x , 0f, MoveComposite.y);
+        
+        if (!isWallRunning)
+        {//does this make you not change directions on the wall?
+            input = transform.TransformDirection(input);
+            input = Vector3.ClampMagnitude(input, 1f);
+        }
+        
         CheckWallRun();
         if (isGrounded)
         {
@@ -93,6 +162,7 @@ public class PlayerMovement : MonoBehaviour
             WallRunMovement();
             DecreaseSpeed(wallRunSpeedDecrease);
         }
+        
         controller.Move(move * Time.deltaTime);
         CameraEffects();
         ApplyGravity();
@@ -124,31 +194,7 @@ public class PlayerMovement : MonoBehaviour
             tilt = Mathf.Lerp(tilt, 0f, cameraChangeTime * Time.deltaTime);
         }
     }
-
-    void HandleInput()
-    {
-        input = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-
-        if (!isWallRunning)
-        {
-            input = transform.TransformDirection(input);
-            input = Vector3.ClampMagnitude(input, 1f);
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) && isGrounded)
-        {
-            isSprinting = true;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            isSprinting = false;
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space) && jumpCharges > 0)
-        {
-            Jump();
-        }
-    }
+    
 
     void CheckGround()
     {
@@ -205,7 +251,7 @@ public class PlayerMovement : MonoBehaviour
         move.z += input.z * airSpeedMultiplier;
         if (isWallJumping)
         {
-            move += forwardDirection * airSpeedMultiplier;
+            move += (walljumpNormalMagnitude * forwardDirection) * (airSpeedMultiplier * wallJumpSpeedMult);
             wallJumpTimer -= 1f * Time.deltaTime;
             if (wallJumpTimer <= 0)
             {
@@ -218,11 +264,12 @@ public class PlayerMovement : MonoBehaviour
 
     void WallRunMovement()
     {
-        if (input.z > (forwardDirection.z - 10f) && input.z < (forwardDirection.z + 10f))
+        float cameraAng = 50f;
+        if (input.z > (forwardDirection.z - cameraAng) && input.z < (forwardDirection.z + cameraAng))
         {
             move += forwardDirection;
         }
-        else if (input.z < (forwardDirection.z - 10f) || input.z > (forwardDirection.z + 10f))
+        else if (input.z < (forwardDirection.z - cameraAng) || input.z > (forwardDirection.z + cameraAng))
         {
             move.x = 0;
             move.z = 0;
@@ -272,8 +319,6 @@ public class PlayerMovement : MonoBehaviour
         lastWall = wallNormal;
         forwardDirection = wallNormal;
         IncreaseSpeed(wallRunSpeedIncrease);
-        isWallJumping = true;
-        wallJumpTimer = maxWallJumpTimer;
     }
 
     void Jump()
@@ -284,9 +329,11 @@ public class PlayerMovement : MonoBehaviour
             Yvelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);
         }
         else if (isWallRunning)
-        {
+        { //create jump that's like a vector.
             ExitWallRun();
-            Yvelocity.y = Mathf.Sqrt(jumpHeight * -4f * normalGravity);
+            isWallJumping = true;
+            wallJumpTimer = maxWallJumpTimer;
+            Yvelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);
         }
         else
         {
