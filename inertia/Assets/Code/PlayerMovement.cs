@@ -281,12 +281,17 @@ public class PlayerMovement : MonoBehaviour
         if (!isGrounded && !isWallRunning)
         {
             jumpCharges -= 1;
+            Yvelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);
         }
         else if (isWallRunning)
         {
             ExitWallRun();
+            Yvelocity.y = Mathf.Sqrt(jumpHeight * -4f * normalGravity);
         }
-        Yvelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);
+        else
+        {
+            Yvelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);
+        }
     }
 
     void ApplyGravity()
