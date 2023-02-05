@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     Vector3 Yvelocity;
     Vector3 forwardDirection;
 
-    public float speed;
+    private float speed;
 
     public float runSpeed;
     public float sprintSpeed;
