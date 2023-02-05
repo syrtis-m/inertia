@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     Vector3 Yvelocity;
     Vector3 forwardDirection;
 
-    private float speed;
+    public float speed;
 
     public float runSpeed;
     public float sprintSpeed;
@@ -130,7 +130,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     void IncreaseSpeed(float speedIncrease)
     {
-        speed += speedIncrease;
+        speed += speedIncrease * Time.deltaTime;
     }
 
     void DecreaseSpeed(float speedDecrease)
@@ -140,7 +140,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     void Update()
     {
-        input = new Vector3(MoveComposite.x , 0f, MoveComposite.y);
+        input = new Vector3(MoveComposite.x , 0f, MoveComposite.y).normalized;
         
         if (!isWallRunning)
         {//does this make you not change directions on the wall?
@@ -163,7 +163,6 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
             DecreaseSpeed(wallRunSpeedDecrease);
         }
         
-        controller.Move(move * Time.deltaTime);
         CameraEffects();
         ApplyGravity();
     }
@@ -171,6 +170,8 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     void FixedUpdate()
     {
         CheckGround();
+        controller.Move(move * Time.deltaTime);
+        controller.Move(Yvelocity * Time.deltaTime);
     }
 
     void CameraEffects()
@@ -223,7 +224,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     void GroundedMovement()
     {
-        speed = isSprinting ? sprintSpeed : runSpeed;
+        speed = (isSprinting ? sprintSpeed : runSpeed);
 
         if (input.x != 0)
         {
@@ -241,7 +242,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
         {
             move.z = 0;
         }
-
+         
         move = Vector3.ClampMagnitude(move, speed);
     }
 
@@ -345,6 +346,6 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     {
         gravity = isWallRunning ? wallRunGravity : normalGravity;
         Yvelocity.y += gravity * Time.deltaTime;
-        controller.Move(Yvelocity * Time.deltaTime);
+        //controller.Move(Yvelocity * Time.deltaTime);
     }
 }
