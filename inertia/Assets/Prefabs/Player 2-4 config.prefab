@@ -66,7 +66,7 @@ Transform:
   - {fileID: 310911166591264131}
   - {fileID: 310911168240536425}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &310911166635917347
 CharacterController:
@@ -129,16 +129,16 @@ MonoBehaviour:
   wallMask:
     serializedVersion: 2
     m_Bits: 64
-  runSpeed: 12
-  sprintSpeed: 12
-  airSpeedMultiplier: 0.3
-  wallJumpSpeedMult: 3
+  runSpeed: 15
+  sprintSpeed: 15
+  airSpeedMultiplier: 0.6
+  wallJumpSpeedMult: 4
   walljumpNormalMagnitude: 0.5
   normalGravity: -30
   wallRunGravity: -1
   jumpHeight: 5
   wallRunSpeedIncrease: 2
-  wallRunSpeedDecrease: 1.5
+  wallRunSpeedDecrease: 1
   maxWallJumpTimer: 0.3
   playerCamera: {fileID: 310911168240536431}
   specialFov: 80

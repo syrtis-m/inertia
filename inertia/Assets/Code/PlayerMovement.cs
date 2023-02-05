@@ -122,6 +122,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     void Start()
     {
+        Application.targetFrameRate = 60; //target 60fps. BUG: game plays differently (parabolas and accel curves) are different at different frame rates
         controller = GetComponent<CharacterController>();
         startHeight = transform.localScale.y;
         jumpCharges = 2;
@@ -163,13 +164,13 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
             DecreaseSpeed(wallRunSpeedDecrease);
         }
         
+        CheckGround();
         CameraEffects();
         ApplyGravity();
     }
 
     void FixedUpdate()
     {
-        CheckGround();
         controller.Move(move * Time.deltaTime);
         controller.Move(Yvelocity * Time.deltaTime);
     }
@@ -248,7 +249,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     void AirMovement()
     {
-        move.x += input.x * airSpeedMultiplier;
+        move.x += input.x * airSpeedMultiplier; 
         move.z += input.z * airSpeedMultiplier;
         if (isWallJumping)
         {
@@ -346,6 +347,5 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     {
         gravity = isWallRunning ? wallRunGravity : normalGravity;
         Yvelocity.y += gravity * Time.deltaTime;
-        //controller.Move(Yvelocity * Time.deltaTime);
     }
 }
