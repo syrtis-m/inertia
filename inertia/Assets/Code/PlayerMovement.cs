@@ -210,8 +210,8 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     void CheckWallRun()
     {
-        onRightWall = Physics.Raycast(transform.position, transform.right, out rightWallHit, 0.7f, wallMask);
-        onLeftWall = Physics.Raycast(transform.position, -transform.right, out leftWallHit, 0.7f, wallMask);
+        onRightWall = Physics.Raycast(transform.position, transform.right, out rightWallHit, 0.9f, wallMask);
+        onLeftWall = Physics.Raycast(transform.position, -transform.right, out leftWallHit, 0.9f, wallMask);
 
         if ((onRightWall || onLeftWall) && !isWallRunning && !isGrounded)
         {
@@ -221,6 +221,13 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
         {
             ExitWallRun();
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawRay(transform.position, transform.right);
+        Gizmos.DrawRay(transform.position, -transform.right);
     }
 
     void GroundedMovement()
