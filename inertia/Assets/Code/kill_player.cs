@@ -10,8 +10,9 @@ public class kill_player : MonoBehaviour
     {
         if (other.GetComponent<CharacterController>())
         {
-            string currentScene = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentScene);
+            //string currentScene = SceneManager.GetActiveScene().name;
+            //SceneManager.LoadScene(currentScene);
+            checkpoints.instance.Respawn();
         }
     }
 }

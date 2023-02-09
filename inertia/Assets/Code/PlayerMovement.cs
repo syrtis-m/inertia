@@ -10,12 +10,16 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 {
     //we inherit from Controls.IPlayerActions so we can use SetCallbacks()
     
+    //singleton pattern
+    public static PlayerMovement instance;
+    
     //UNITY input actions (controls.cs)
     private Controls controls; 
     private Vector2 MouseDelta;
     private Vector2 MoveComposite;
     private Action OnJumpPerformed;
     CharacterController controller;
+    
     
     public Transform groundCheck;
 
@@ -29,6 +33,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     private float speed;
 
+    //movement configs
     public float runSpeed;
     public float sprintSpeed;
     public float airSpeedMultiplier; //slows you down when you're in midair
@@ -42,15 +47,15 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     public float wallRunSpeedIncrease;
     public float wallRunSpeedDecrease;
-
+    
     int jumpCharges;
 
     bool isSprinting;
     bool isWallRunning;
     bool isGrounded;
 
-    float startHeight;
-    Vector3 standingCenter = new Vector3(0, 0, 0);
+    //float startHeight;
+    //Vector3 standingCenter = new Vector3(0, 0, 0);
 
     bool onLeftWall;
     bool onRightWall;
@@ -120,11 +125,30 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
         }
     }
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public void ResetPlayer()
+    {
+        jumpCharges = 2;
+        normalFov = playerCamera.fieldOfView;
+        
+        //movement stuff
+        speed = 0;
+        move = Vector3.zero;
+        input = Vector3.zero;
+        Yvelocity = Vector3.zero;
+        forwardDirection = Vector3.zero;
+
+    }
+
     void Start()
     {
         Application.targetFrameRate = 60; //target 60fps. BUG: game plays differently (parabolas and accel curves) are different at different frame rates
         controller = GetComponent<CharacterController>();
-        startHeight = transform.localScale.y;
+        //startHeight = transform.localScale.y; don't think this is used, so commenting out
         jumpCharges = 2;
         normalFov = playerCamera.fieldOfView;
     }
