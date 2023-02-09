@@ -297,7 +297,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     void WallRunMovement()
     {
-        float cameraAng = 50f;
+        float cameraAng = 20f;
         if (input.z > (forwardDirection.z - cameraAng) && input.z < (forwardDirection.z + cameraAng))
         {
             move += forwardDirection;
