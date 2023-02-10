@@ -7,6 +7,7 @@ public class checkpoints : MonoBehaviour
 {
     public static checkpoints instance; //singleton pattern
     private Dictionary<string, GameObject> spawnpoints;
+    [Tooltip("player will spawn/respawn at whatever checkpoint this is set to.")]
     public string currentSpawn;
 
     private void Awake()
@@ -20,6 +21,13 @@ public class checkpoints : MonoBehaviour
             //check if they have a checkpoint_instance script.
             spawnpoints.Add(child.name, child.gameObject);
             Debug.Log("init checkpoint: " + child.name);
+        }
+
+        //set the first checkpoint to the 
+        if (currentSpawn != String.Empty)
+        {
+            SetCheckpoint(currentSpawn);
+            Respawn();
         }
     }
 
