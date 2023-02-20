@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     
     int jumpCharges;
 
-    bool isSprinting;
+    public bool isSprinting;
     bool isWallRunning;
     bool isGrounded;
 
