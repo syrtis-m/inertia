@@ -43447,6 +43447,10 @@ PrefabInstance:
       propertyPath: sprintSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 310911166635917345, guid: 82be19df4f32d9145bcf121ee1ea4d4e, type: 3}
+      propertyPath: wallRunSpeedDecrease
+      value: 0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 310911166635917372, guid: 82be19df4f32d9145bcf121ee1ea4d4e, type: 3}
       propertyPath: m_RootOrder
       value: 3
