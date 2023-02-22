@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NewGameButton : MonoBehaviour
+public class Mind : MonoBehaviour
 {
     public int newGameScene;
 
