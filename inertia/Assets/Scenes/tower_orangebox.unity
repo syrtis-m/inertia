@@ -50300,6 +50300,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5622449120745304085, guid: 2a8a0adc2685cb847bf7b0e2c349d5b3, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5622449120745304087, guid: 2a8a0adc2685cb847bf7b0e2c349d5b3, type: 3}
       propertyPath: m_Name
       value: BackgroundMusic
@@ -50375,8 +50379,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7456613384195415208, guid: 966d018efa3960e46ac4e2f0072bbd91, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7456613384195415208, guid: 966d018efa3960e46ac4e2f0072bbd91, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 103a190b52fa5104d8576b316bf76930, type: 2}
     - target: {fileID: 7456613384195415211, guid: 966d018efa3960e46ac4e2f0072bbd91, type: 3}
       propertyPath: m_Name
       value: kill_player
