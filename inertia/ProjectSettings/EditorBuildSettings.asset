@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 0956c710661754d8392a3b5c1635a870
   - enabled: 1
-    path: Assets/Scenes/tower_orangebox.unity
-    guid: 6eba4aa5fad8db841adaa7506fb6e88a
+    path: Assets/Scenes/tower_orangebox_textured.unity
+    guid: 3004382e6dadeca46832547b6cc51243
   m_configObjects: {}
