@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "fe3bf89b-7ec4-4427-86ea-8e7e49eb93e1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -111,17 +120,6 @@
                 },
                 {
                     "name": "",
-                    "id": "564717fa-81ac-4867-b50b-4c087280f380",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "kbd+mouse",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "f44f1446-dd96-4078-9296-11f5a4a4198c",
                     "path": "<Mouse>/position",
                     "interactions": "",
@@ -139,6 +137,17 @@
                     "processors": "",
                     "groups": "kbd+mouse",
                     "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cbdad0ed-8824-41d4-a7ce-59b9671dc025",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "kbd+mouse",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

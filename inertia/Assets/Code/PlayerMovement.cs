@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     
     //UNITY input actions (controls.cs)
     private Controls controls; 
-    private Vector2 MouseDelta;
+    private Vector2 MousePos;
     private Vector2 MoveComposite;
     private Action OnJumpPerformed;
     CharacterController controller;
@@ -94,7 +94,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     //On[ACTION] for each Action in the InputAction Asset
     public void OnLook(InputAction.CallbackContext context)
     { //currently isn't used for camera controls.
-        MouseDelta = context.ReadValue<Vector2>();
+        MousePos = context.ReadValue<Vector2>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -125,6 +125,24 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
         }
     }
 
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(MousePos);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 2f))
+        {
+            if (hit.transform == null)
+            {
+                return;
+            }
+            var target = hit.transform.gameObject;
+            if (target.GetComponent<AbstractInteractable>())
+            {
+                target.GetComponent<AbstractInteractable>().Interact();
+            }
+        }
+    }
+    
     private void Awake()
     {
         instance = this;
