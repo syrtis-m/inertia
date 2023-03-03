@@ -143,7 +143,7 @@ MonoBehaviour:
   wallMask:
     serializedVersion: 2
     m_Bits: 64
-  runSpeed: 15
+  runSpeed: 20
   sprintSpeed: 20
   airSpeedMultiplier: 0.6
   wallJumpSpeedMult: 4
