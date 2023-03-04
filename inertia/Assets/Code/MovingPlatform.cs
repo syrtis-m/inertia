@@ -17,7 +17,7 @@ public class MovingPlatform : MonoBehaviour
         var target = points[currentDestination];
         
         var dist = Vector3.Distance(transform.position, target.position);
-        if (dist < .05f)
+        if (dist < .005f)
         {
             currentDestination++;
             if (currentDestination >= points.Count)
@@ -37,7 +37,6 @@ public class MovingPlatform : MonoBehaviour
         var curPos = transform.position;
         PlayerMovement.instance.externalMovement = curPos - prevPos;
         prevPos = curPos;
-        Debug.Log("a");
     }
 
     private void OnTriggerExit(Collider other)

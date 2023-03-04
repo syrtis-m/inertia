@@ -18309,7 +18309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e23c07edccf1849aca92481e6f0cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSpawn: tower
+  currentSpawn: 
 --- !u!4 &894072072
 Transform:
   m_ObjectHideFlags: 0
