@@ -76,6 +76,8 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     public float wallRunTilt;
     public float tilt;
 
+    public Vector3 externalMovement; //used by moving platforms
+
     /////// unity input stuff ///////
     private void OnEnable()
     {
@@ -215,6 +217,10 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     {
         controller.Move(move * Time.deltaTime);
         controller.Move(Yvelocity * Time.deltaTime);
+        if (isGrounded)
+        {
+            controller.Move(externalMovement); 
+        }
     }
 
     void CameraEffects()
