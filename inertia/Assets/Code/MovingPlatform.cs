@@ -43,4 +43,18 @@ public class MovingPlatform : MonoBehaviour
     {
         PlayerMovement.instance.externalMovement = Vector3.zero;
     }
+
+    private void OnDrawGizmos()
+    {
+        //draw a line between points.
+        Gizmos.color = Color.red;
+        for (int i = 1; i < points.Count; i++)
+        {
+            Gizmos.DrawLine(points[i - 1].position, points[i].position);
+            if (i == points.Count - 1)
+            {
+                Gizmos.DrawLine(points[i].position,points[0].position);
+            }
+        }
+    }
 }
