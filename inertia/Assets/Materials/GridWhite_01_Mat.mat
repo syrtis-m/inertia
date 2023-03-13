@@ -8,14 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GridWhite_01_Mat
-  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: 5c6e46de88f799a4e8ea79859e53c1a1, type: 2}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 2100000, guid: 2acf7cd00f1fa8845bf196af4c332357, type: 2}
   m_ModifiedSerializedProperties: 2
-  m_ValidKeywords: []
-  m_InvalidKeywords:
+  m_ValidKeywords:
   - _EMISSION
   - _GLOSSYREFLECTIONS_OFF
   - _NORMALMAP
+  m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
