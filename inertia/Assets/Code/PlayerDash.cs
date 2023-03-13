@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+//Adopted from https://www.youtube.com/watch?v=vTNWUbGkZ58
 public class PlayerDash : MonoBehaviour
 {
     PlayerMovement moveScript;
