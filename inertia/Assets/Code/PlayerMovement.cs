@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     private Vector2 MousePos;
     private Vector2 MoveComposite;
     private Action OnJumpPerformed;
-    CharacterController controller;
+    public CharacterController controller;
     
     
     public Transform groundCheck;
@@ -280,7 +280,8 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     void GroundedMovement()
     {
-        speed = (isSprinting ? sprintSpeed : runSpeed);
+        //speed = (isSprinting ? sprintSpeed : runSpeed);
+        speed = runSpeed;
 
         if (input.x != 0)
         {
