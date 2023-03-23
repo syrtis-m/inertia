@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d74f437b639504f519fe3239bc3efcc6
+guid: 6f3b325bf91e24048946af88bc9135a8
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,9 +9,8 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - FREEDOM
-  fallbackFontReferences:
-  - {fileID: 12800000, guid: 56e4da267a50d455cbfe9027f4a4a006, type: 3}
+  - Grandma's Television
+  fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
