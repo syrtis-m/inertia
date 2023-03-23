@@ -35,7 +35,6 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     //movement configs
     public float runSpeed;
-    public float sprintSpeed;
     public float airSpeedMultiplier; //slows you down when you're in midair
     public float wallJumpSpeedMult; //impacts how flat the parabola of jumping off is
     public float walljumpNormalMagnitude = 1f; //how much sideways you go when you jump off a wall (magnitude modifier for normal vector)
@@ -52,7 +51,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     public bool isSprinting;
     bool isWallRunning;
-    bool isGrounded;
+    bool isGrounded; //are we currently on the ground.
 
     //float startHeight;
     //Vector3 standingCenter = new Vector3(0, 0, 0);
@@ -194,6 +193,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
         }
         
         CheckWallRun();
+        CheckGround();
         if (isGrounded)
         {
             GroundedMovement();
@@ -208,7 +208,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
             DecreaseSpeed(wallRunSpeedDecrease);
         }
         
-        CheckGround();
+        
         CameraEffects();
         ApplyGravity();
     }
@@ -383,19 +383,19 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     {
         if (!isGrounded && !isWallRunning)
         {
-            jumpCharges -= 1;
-            Yvelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);
+            jumpCharges -= 1;//jump charges only subtract when you aren't 
+            Yvelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);//jump
         }
         else if (isWallRunning)
-        { //create jump that's like a vector.
+        { 
             ExitWallRun();
             isWallJumping = true;
             wallJumpTimer = maxWallJumpTimer;
-            Yvelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);
+            Yvelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);//jump
         }
         else
         {
-            Yvelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);
+            Yvelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);//jump
         }
     }
 
