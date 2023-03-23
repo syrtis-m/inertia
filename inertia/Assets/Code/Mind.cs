@@ -19,4 +19,9 @@ public class Mind : MonoBehaviour
     {
         SceneManager.LoadScene(newGameScene);
     }
+
+    public void StartGame(int scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 }
