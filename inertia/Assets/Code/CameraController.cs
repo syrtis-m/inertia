@@ -7,8 +7,8 @@ public class CameraController : MonoBehaviour
     public float minX = -60f;
     public float maxX = 60f;
 
-    public float sensitivity;
     public Camera cam;
+    public float sensitivity;
 
     float rotY = 0f;
     float rotX = 0f;

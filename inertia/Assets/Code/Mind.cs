@@ -13,6 +13,7 @@ public class Mind : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        DontDestroyOnLoad(instance);
     }
 
     public void StartGame()
