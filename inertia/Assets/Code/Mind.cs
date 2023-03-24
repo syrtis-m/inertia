@@ -7,22 +7,24 @@ using UnityEngine.SceneManagement;
 public class Mind : MonoBehaviour
 {
     public static Mind instance;
-    
-    public int newGameScene;
+
+    public float sensitivity;
 
     private void Awake()
     {
-        instance = this;
-        DontDestroyOnLoad(instance);
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(instance);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void StartGame()
+    public void EnterScene(int index)
     {
-        SceneManager.LoadScene(newGameScene);
-    }
-
-    public void StartGame(int scene)
-    {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(index);
     }
 }

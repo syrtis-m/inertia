@@ -37,7 +37,7 @@ public class PauseMenu : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                Mind.instance.StartGame(0);
+                Mind.instance.EnterScene(0);
             }
         }
     }

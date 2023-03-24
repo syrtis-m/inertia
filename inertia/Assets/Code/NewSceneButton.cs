@@ -18,6 +18,6 @@ public class NewSceneButton : MonoBehaviour
 
     void ToNewScene(int index)
     {
-        Mind.instance.StartGame(index);
+        Mind.instance.EnterScene(index);
     }
 }

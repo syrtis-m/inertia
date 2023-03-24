@@ -8,27 +8,27 @@ public class CameraController : MonoBehaviour
     public float maxX = 60f;
 
     public Camera cam;
-    public float sensitivity;
 
     float rotY = 0f;
     float rotX = 0f;
 
     PlayerMovement movementScript;
+    Mind instance;
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
         movementScript = GetComponent<PlayerMovement>();
+        instance = Mind.instance;
     }
 
     void Update()
     {
         if(!PauseMenu.isGamePaused)
         {
-            rotY += Input.GetAxis("Mouse X") * sensitivity;
-            rotX += Input.GetAxis("Mouse Y") * sensitivity;
+            rotY += Input.GetAxis("Mouse X") * instance.sensitivity;
+            rotX += Input.GetAxis("Mouse Y") * instance.sensitivity;
 
             rotX = Mathf.Clamp(rotX, minX, maxX);
 
