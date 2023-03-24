@@ -14832,7 +14832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e23c07edccf1849aca92481e6f0cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSpawn: temp
+  currentSpawn: 
 --- !u!4 &894072072
 Transform:
   m_ObjectHideFlags: 0
@@ -19192,7 +19192,7 @@ PrefabInstance:
     - target: {fileID: 5622449120745304085, guid: 2a8a0adc2685cb847bf7b0e2c349d5b3, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 2e838f31733a16344bce0912cb9e30e6, type: 3}
+      objectReference: {fileID: 8300000, guid: d59404a1824ac3342a23fe31305b2b41, type: 3}
     - target: {fileID: 5622449120745304087, guid: 2a8a0adc2685cb847bf7b0e2c349d5b3, type: 3}
       propertyPath: m_Name
       value: BackgroundMusic
