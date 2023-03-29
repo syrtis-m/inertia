@@ -23,16 +23,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tower.unity
     guid: 3004382e6dadeca46832547b6cc51243
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/level6.unity
     guid: 0a26a49cdd170254983aba5915f3240a
   - enabled: 1
     path: Assets/Scenes/platform.unity
     guid: a6360520dc56beb4e862958d1b1854d1
   - enabled: 1
-    path: Assets/Scenes/credits.unity
-    guid: b280f2c4e89fbba458b3046d71de0c7d
-  - enabled: 1
     path: Assets/Scenes/level7.unity
     guid: 14b62a077d5ab824c9983e6d0e335a2f
+  - enabled: 1
+    path: Assets/Scenes/credits.unity
+    guid: b280f2c4e89fbba458b3046d71de0c7d
   m_configObjects: {}
