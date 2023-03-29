@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     private float gravity;
     public float normalGravity;
     public float wallRunGravity;
+    public float maxGravity;//this configs what the max yvelocity.y there can be when standing on a platform. (this impacts how it feels to walk off a platform without jumping. this is less than normalGravity to give a similar feeling to coyote time mechanics
     public float jumpHeight;
 
     public float wallRunSpeedIncrease;
@@ -184,6 +185,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     void Update()
     {
+        
         input = new Vector3(MoveComposite.x , 0f, MoveComposite.y).normalized;
         
         if (!isWallRunning)
@@ -221,6 +223,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
         {
             controller.Move(externalMovement); 
         }
+        
     }
 
     void CameraEffects()
@@ -244,7 +247,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
             tilt = Mathf.Lerp(tilt, 0f, cameraChangeTime * Time.deltaTime);
         }
     }
-    
+
 
     void CheckGround()
     {
@@ -276,6 +279,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
         Gizmos.color = Color.green;
         Gizmos.DrawRay(transform.position, transform.right);
         Gizmos.DrawRay(transform.position, -transform.right);
+        Gizmos.DrawSphere(groundCheck.position, 0.25f);
     }
 
     void GroundedMovement()
@@ -383,7 +387,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     {
         if (!isGrounded && !isWallRunning)
         {
-            jumpCharges -= 1;//jump charges only subtract when you aren't 
+            jumpCharges -= 1;//jump charges only subtract when you aren't grounded or wallrunning
             Yvelocity.y = Mathf.Sqrt(jumpHeight * -2f * normalGravity);//jump
         }
         else if (isWallRunning)
@@ -402,6 +406,14 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     void ApplyGravity()
     {
         gravity = isWallRunning ? wallRunGravity : normalGravity;
+        //check if we are at constant transform.position.y; if so, clamp yvelocity. otherwise, apply gravity as we did before
         Yvelocity.y += gravity * Time.deltaTime;
+        if (isGrounded)
+        {
+            Yvelocity.y = Mathf.Clamp(Yvelocity.y, maxGravity, 999);
+        }
+        
     }
+
+    
 }

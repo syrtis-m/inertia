@@ -37,7 +37,7 @@ Transform:
   - {fileID: 1231536196117582182}
   - {fileID: 8841223067967671730}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4493994089453073866
 MonoBehaviour:
@@ -92,7 +92,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minX: -60
   maxX: 60
-  sensitivity: 4.5
   cam: {fileID: 4618801303564144902}
 --- !u!114 &128192185393188604
 MonoBehaviour:
@@ -115,12 +114,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   runSpeed: 20
-  sprintSpeed: 20
   airSpeedMultiplier: 0.6
   wallJumpSpeedMult: 4
   walljumpNormalMagnitude: 0.5
   normalGravity: -30
   wallRunGravity: -1
+  maxGravity: -30
   jumpHeight: 5
   wallRunSpeedIncrease: 2
   wallRunSpeedDecrease: 0.65
@@ -162,7 +161,7 @@ GameObject:
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -352,7 +351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2253302334196946600
 Transform:
   m_ObjectHideFlags: 0
