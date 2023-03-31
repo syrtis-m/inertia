@@ -116,6 +116,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     public void OnSprint(InputAction.CallbackContext context)
     {//https://docs.unity3d.com/Packages/com.unity.inputsystem@1.0/manual/Interactions.html
+        //this function doesn't actually do anything - dash is implemented in PlayerDash.cs
         var held = context.control.IsPressed();
         if (held && isGrounded)
         {
@@ -284,7 +285,6 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     void GroundedMovement()
     {
-        //speed = (isSprinting ? sprintSpeed : runSpeed);
         speed = runSpeed;
 
         if (input.x != 0)

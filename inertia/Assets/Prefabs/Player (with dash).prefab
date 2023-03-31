@@ -149,6 +149,7 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0, z: 0}
   cam: {fileID: 8841223067967671730}
   dashChargeText: {fileID: 0}
+  speedlines: {fileID: 709104243992255699, guid: 8e438b1e9386d1543bfb8b3c0663931a, type: 3}
 --- !u!1 &5492074640774676534
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +246,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -291,7 +292,7 @@ MonoBehaviour:
     m_Bits: 8192
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 0
+  antialiasingMode: 1
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -300,7 +301,7 @@ MonoBehaviour:
   subpixelMorphologicalAntialiasing:
     quality: 2
   fastApproximateAntialiasing:
-    fastMode: 0
+    fastMode: 1
     keepAlpha: 0
   fog:
     enabled: 1

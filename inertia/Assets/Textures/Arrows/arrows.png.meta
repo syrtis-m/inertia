@@ -358,7 +358,7 @@ TextureImporter:
         width: 896
         height: 422
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -366,6 +366,27 @@ TextureImporter:
       bones: []
       spriteID: c637495c721446c41b5c6ca4cacd680f
       internalID: 1980371578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arrows_12
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 246
+        width: 1400
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a6a6bd59921dbe4f8910d5d0039a241
+      internalID: -1793197321
       vertices: []
       indices: 
       edges: []
@@ -385,6 +406,7 @@ TextureImporter:
       arrows_1: 1109137413
       arrows_10: -2075874973
       arrows_11: 1980371578
+      arrows_12: -1793197321
       arrows_2: -1778970097
       arrows_3: -1910776681
       arrows_4: 1924042015

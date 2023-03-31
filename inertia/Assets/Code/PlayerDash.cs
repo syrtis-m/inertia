@@ -19,6 +19,8 @@ public class PlayerDash : MonoBehaviour
     public Transform cam;
 
     public TMP_Text dashChargeText;
+    public GameObject speedlines;
+    private GameObject speedlines_instance;
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +35,10 @@ public class PlayerDash : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        float targetAngle = 0;
         if (direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
         }
 
@@ -46,6 +49,8 @@ public class PlayerDash : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > nextDash)
         {
+            speedlines_instance = Instantiate(speedlines, gameObject.transform, false);
+            speedlines_instance.transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);//this doesn't seem to work that well.
             StartCoroutine(Dash());
             lastDash = Time.time;
             dashChargeText.text = "Dash Charges: 0";
@@ -54,11 +59,13 @@ public class PlayerDash : MonoBehaviour
 
     IEnumerator Dash()
     {
+        
         float startTime = Time.time;
         while(Time.time < startTime + dashTime)
         {
             moveScript.controller.Move(moveDirection.normalized * dashSpeed * Time.deltaTime);
             yield return null;
         }
+        Destroy(speedlines_instance);
     }
 }
