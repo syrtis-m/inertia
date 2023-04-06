@@ -45,7 +45,7 @@ public class PlayerDash : MonoBehaviour
         float nextDash = lastDash + dashCooldown;
         if (Time.time > nextDash)
         {
-            dashChargeText.text = "Dash Charges: 1";
+            dashChargeText.text = "Dash Ready";
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > nextDash)
         {
@@ -53,7 +53,7 @@ public class PlayerDash : MonoBehaviour
             speedlines_instance.transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);//this doesn't seem to work that well.
             StartCoroutine(Dash());
             lastDash = Time.time;
-            dashChargeText.text = "Dash Charges: 0";
+            dashChargeText.text = "";
         }
     }
 

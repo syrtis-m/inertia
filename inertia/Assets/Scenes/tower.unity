@@ -43588,6 +43588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (with dash)
       objectReference: {fileID: 0}
+    - target: {fileID: 7594696348822121080, guid: c8ef476677ca24e5390ca8a281760af2, type: 3}
+      propertyPath: m_ShowCustomSorter
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8436259335093492250, guid: c8ef476677ca24e5390ca8a281760af2, type: 3}
       propertyPath: m_RootOrder
       value: 5
