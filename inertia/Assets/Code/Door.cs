@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : AbstractInteractable
+public class Door : MonoBehaviour
 {
     private Animator _animator;
     public List<int> requiredKeys;
@@ -13,27 +13,31 @@ public class Door : AbstractInteractable
         _animator = GetComponent<Animator>();
     }
 
-    public override void Interact()
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (requiredKeys != null)
-        {//case where we have keyIDs that are required
-            var keycheck_successes = 0;
-            foreach (var key in requiredKeys)
-            {
-                if (PlayerInventory.instance.CheckKey(key))
+        if (other.GetComponent<CharacterController>())
+        {
+            if (requiredKeys != null)
+            {//case where we have keyIDs that are required
+                var keycheck_successes = 0;
+                foreach (var key in requiredKeys)
                 {
-                    keycheck_successes += 1;
+                    if (PlayerInventory.instance.CheckKey(key))
+                    {
+                        keycheck_successes += 1;
+                    }
+                }
+
+                if (keycheck_successes == requiredKeys.Count)
+                {
+                    _animator.SetTrigger("Open");
                 }
             }
-
-            if (keycheck_successes == requiredKeys.Count)
+            else
             {
                 _animator.SetTrigger("Open");
             }
-        }
-        else
-        {
-            _animator.SetTrigger("Open");
         }
     }
 }

@@ -128,24 +128,6 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
         }
     }
 
-    public void OnInteract(InputAction.CallbackContext context)
-    {
-        Ray ray = Camera.main.ScreenPointToRay(MousePos);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 2f))
-        {
-            if (hit.transform == null)
-            {
-                return;
-            }
-            var target = hit.transform.gameObject;
-            if (target.GetComponent<AbstractInteractable>())
-            {
-                target.GetComponent<AbstractInteractable>().Interact();
-            }
-        }
-    }
-    
     private void Awake()
     {
         instance = this;

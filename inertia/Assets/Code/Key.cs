@@ -3,13 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : AbstractInteractable
+public class Key : MonoBehaviour
 {
     public int KeyID;
-    
-    public override void Interact()
+
+    private void OnTriggerEnter(Collider other)
     {
-        PlayerInventory.instance.RegisterKey(KeyID);
-        Destroy(gameObject);
+        if (other.GetComponent<CharacterController>())
+        {
+            PlayerInventory.instance.RegisterKey(KeyID);
+            Destroy(gameObject);
+        }
     }
 }

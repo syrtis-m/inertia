@@ -5,8 +5,15 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
+    
+    public int sceneToLoad = 0;
+    
     private void OnTriggerEnter(Collider other)
     {
-        Mind.instance.EnterScene(0);
+        if (other.GetComponent<CharacterController>())
+        {
+            Mind.instance.EnterScene(sceneToLoad);
+        }
     }
 }
+        

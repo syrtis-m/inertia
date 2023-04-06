@@ -40,15 +40,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Interact",
-                    "type": "Button",
-                    "id": "fe3bf89b-7ec4-4427-86ea-8e7e49eb93e1",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -137,17 +128,6 @@
                     "processors": "",
                     "groups": "kbd+mouse",
                     "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cbdad0ed-8824-41d4-a7ce-59b9671dc025",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "kbd+mouse",
-                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
