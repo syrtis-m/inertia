@@ -49,6 +49,7 @@ public class PlayerDash : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > nextDash)
         {
+            SoundManager.instance.PlaySoundDash();
             speedlines_instance = Instantiate(speedlines, gameObject.transform, false);
             speedlines_instance.transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);//this doesn't seem to work that well.
             StartCoroutine(Dash());
