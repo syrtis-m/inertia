@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1059386361}
-  m_IndirectSpecularColor: {r: 0.6453254, g: 0.47888172, b: 0.5354287, a: 1}
+  m_IndirectSpecularColor: {r: 0.64532495, g: 0.47888094, b: 0.5354272, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -453,6 +453,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &309870114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8080199578928364758, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+  m_PrefabInstance: {fileID: 2102974274}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330508977
 GameObject:
   m_ObjectHideFlags: 0
@@ -9071,21 +9076,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Menu
       objectReference: {fileID: 0}
-    - target: {fileID: 1998801439992253923, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 300
+    - target: {fileID: 2962773329998579458, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1998801439992253923, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -175
+    - target: {fileID: 2962773329998579458, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 309870114}
+    - target: {fileID: 2962773329998579458, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
-    - target: {fileID: 3850765091143029021, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 300
+    - target: {fileID: 2962773329998579458, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 3850765091143029021, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 175
+    - target: {fileID: 2962773329998579458, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424960753473248045, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.55506116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424960753473248045, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451827364527397442, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.55506116
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451827364527397442, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451827364527397442, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.55506116
       objectReference: {fileID: 0}
     - target: {fileID: 7245610742769725515, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
       propertyPath: m_Pivot.x
@@ -9169,6 +9198,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7245610742769725515, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8080199578928364758, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
