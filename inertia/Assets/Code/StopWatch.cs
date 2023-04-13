@@ -7,7 +7,7 @@ using TMPro;
 public class StopWatch : MonoBehaviour
 {
     public TMP_Text stopWatchText;
-    float time;
+    public float time;
     // Start is called before the first frame update
     void Start()
     {
