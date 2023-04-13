@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
 
     public static bool isGamePaused = false;
+    public bool isGameFinished = false;
     public GameObject pauseMenu;
 
     void Start()
@@ -24,7 +25,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (isGamePaused)
+            if (isGamePaused && !isGameFinished)
             {
                 ResumeGame();
             }
@@ -34,7 +35,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if (isGamePaused)
+        if (isGamePaused && !isGameFinished)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -53,7 +54,7 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = false;
     }
 
-    void PauseGame()
+    public void PauseGame()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;

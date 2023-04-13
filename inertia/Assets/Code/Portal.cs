@@ -5,14 +5,21 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-    
-    public int sceneToLoad = 0;
-    
+
+    public GameObject winMenu;
+    public GameObject UICanvas;
+    public GameObject pauseMenu;
+    public PauseMenu pauseMenuScript;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<CharacterController>())
         {
-            Mind.instance.EnterScene(sceneToLoad);
+            pauseMenuScript.PauseGame();
+            pauseMenuScript.isGameFinished = true;
+            pauseMenu.SetActive(false);
+            UICanvas.SetActive(false);
+            winMenu.SetActive(true);
         }
     }
 }
