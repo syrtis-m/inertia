@@ -16,17 +16,20 @@ public class PlayerDash : MonoBehaviour
     float lastDash;
 
     public Vector3 moveDirection;
-    public Transform cam;
+    public GameObject cam;
+    public Transform spawnPoint;
 
     public TMP_Text dashChargeText;
     public GameObject speedlines;
     private GameObject speedlines_instance;
+    Camera mainCamera; //https://gamedevbeginner.com/billboards-in-unity-and-how-to-make-your-own/
 
     // Start is called before the first frame update
     void Start()
     {
         moveScript = GetComponent<PlayerMovement>();
         lastDash = Time.time - dashCooldown;
+        mainCamera = Camera.main;
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class PlayerDash : MonoBehaviour
         float targetAngle = 0;
         if (direction.magnitude >= 0.1f)
         {
-            targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
             moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
         }
 
@@ -50,8 +53,8 @@ public class PlayerDash : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > nextDash)
         {
             SoundManager.instance.PlaySoundDash();
-            speedlines_instance = Instantiate(speedlines, gameObject.transform, false);
-            speedlines_instance.transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);//this doesn't seem to work that well.
+            speedlines_instance = Instantiate(speedlines, spawnPoint, false);
+            speedlines_instance.transform.rotation = mainCamera.transform.rotation;
             StartCoroutine(Dash());
             lastDash = Time.time;
             dashChargeText.text = "";

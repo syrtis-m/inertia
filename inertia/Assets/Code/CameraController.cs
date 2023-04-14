@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
 
     float rotY = 0f;
     float rotX = 0f;
+    
 
     PlayerMovement movementScript;
     Mind instance;
