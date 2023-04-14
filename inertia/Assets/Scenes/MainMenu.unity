@@ -648,7 +648,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 1
+  m_text: intro
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e1e66c88a27e45a3b0e93a45d0ae677, type: 2}
   m_sharedMaterial: {fileID: 289557441345057176, guid: 6e1e66c88a27e45a3b0e93a45d0ae677, type: 2}
@@ -783,7 +783,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 3
+  m_text: maze
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e1e66c88a27e45a3b0e93a45d0ae677, type: 2}
   m_sharedMaterial: {fileID: 289557441345057176, guid: 6e1e66c88a27e45a3b0e93a45d0ae677, type: 2}
@@ -4330,7 +4330,7 @@ GameObject:
   - component: {fileID: 1774375568}
   - component: {fileID: 1774375571}
   m_Layer: 5
-  m_Name: Level 1
+  m_Name: Intro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5018,7 +5018,7 @@ GameObject:
   - component: {fileID: 1942222004}
   - component: {fileID: 1942222007}
   m_Layer: 5
-  m_Name: Level 3
+  m_Name: maze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
