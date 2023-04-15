@@ -37,9 +37,17 @@ public class PauseMenu : MonoBehaviour
 
         if (isGamePaused && !isGameFinished)
         {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                RestartScene();
+            }
+        }
+
+        if (isGamePaused && !isGameFinished)
+        {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                Mind.instance.EnterScene(0);
+                LoadMainMenu();
             }
         }
     }
@@ -67,5 +75,11 @@ public class PauseMenu : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void RestartScene()
+    {
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(sceneIndex);
     }
 }
