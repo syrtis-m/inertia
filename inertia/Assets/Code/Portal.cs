@@ -19,12 +19,34 @@ public class Portal : MonoBehaviour
     {
         if (other.GetComponent<CharacterController>())
         {
-            timeText.text = "Time: " + (int)stopWatch.time;
+            DisplayTime();
             pauseMenuScript.PauseGame();
             pauseMenuScript.isGameFinished = true;
             pauseMenu.SetActive(false);
             UICanvas.SetActive(false);
             winMenu.SetActive(true);
+        }
+    }
+
+
+    void DisplayTime()
+    {
+        int time = (int)stopWatch.time;
+        if(time < 60)
+        {
+            timeText.text = "Time: " + time;
+        }
+        else
+        {
+            int minute = time / 60;
+            if ((time % 60) < 10)
+            {
+                timeText.text = "Time: " + minute + ":0" + (time % 60);
+            }
+            else
+            {
+                timeText.text = "Time: " + minute + ":" + (time % 60);
+            }
         }
     }
 }
