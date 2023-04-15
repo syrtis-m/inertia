@@ -68,7 +68,7 @@ Transform:
   - {fileID: 1231536196117582182}
   - {fileID: 8841223067967671730}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4493994089453073866
 MonoBehaviour:
@@ -82,6 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc37aea7be819140972b2d6d9f25a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keysUI: {fileID: 0}
   keys: 
 --- !u!143 &4861128180771459937
 CharacterController:
@@ -362,7 +363,7 @@ MonoBehaviour:
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
   m_ShowToolkit: 0
-  m_ShowCustomSorter: 1
+  m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []

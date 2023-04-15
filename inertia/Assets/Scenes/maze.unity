@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1059386361}
-  m_IndirectSpecularColor: {r: 0.6453254, g: 0.47888172, b: 0.5354287, a: 1}
+  m_IndirectSpecularColor: {r: 0.64532495, g: 0.47888094, b: 0.5354272, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2152,6 +2152,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1f56d89ef9bed34a91caf89d2c043da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &466306945 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7978675949305648072, guid: 7cf19bcf7dc774e9cb44e4d2b50204f0, type: 3}
+  m_PrefabInstance: {fileID: 466306942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45fd588f6f634ef2b3b2d14a6b59e00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!43 &477452101
@@ -13138,6 +13149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (with dash)
       objectReference: {fileID: 0}
+    - target: {fileID: 4493994089453073866, guid: c8ef476677ca24e5390ca8a281760af2, type: 3}
+      propertyPath: keysUI
+      value: 
+      objectReference: {fileID: 466306945}
     - target: {fileID: 8436259335093492250, guid: c8ef476677ca24e5390ca8a281760af2, type: 3}
       propertyPath: m_RootOrder
       value: 6

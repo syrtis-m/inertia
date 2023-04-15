@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public static PlayerInventory instance;
+    public KeysUI keysUI;
     
     public List<int> keys;
 
@@ -18,6 +19,7 @@ public class PlayerInventory : MonoBehaviour
     public void RegisterKey(int key)
     {
         keys.Add(key);
+        keysUI.CollectKey();
     }
 
     public bool CheckKey(int key)

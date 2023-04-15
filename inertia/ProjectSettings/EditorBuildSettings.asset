@@ -23,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tower.unity
     guid: 3004382e6dadeca46832547b6cc51243
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/platform.unity
     guid: a6360520dc56beb4e862958d1b1854d1

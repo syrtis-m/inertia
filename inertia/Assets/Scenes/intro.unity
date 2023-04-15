@@ -294,7 +294,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-26996
+  m_Name: pb_Mesh-70286
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1332,6 +1332,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &765752657 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7978675949305648072, guid: 7cf19bcf7dc774e9cb44e4d2b50204f0, type: 3}
+  m_PrefabInstance: {fileID: 6079695116289033200}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45fd588f6f634ef2b3b2d14a6b59e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &783628232 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6455393612191233820, guid: 2a289f71de7de4daea20cda8f03bfdf0, type: 3}
@@ -3032,7 +3043,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-26982
+  m_Name: pb_Mesh-70266
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -4014,7 +4025,7 @@ PrefabInstance:
       objectReference: {fileID: 1387014152}
     - target: {fileID: 5302287780433949952, guid: 5655694a500f28d49905eb77ebb38ae1, type: 3}
       propertyPath: m_VersionIndex
-      value: 456
+      value: 462
       objectReference: {fileID: 0}
     - target: {fileID: 7839718801397450478, guid: 5655694a500f28d49905eb77ebb38ae1, type: 3}
       propertyPath: m_Mesh
@@ -5546,7 +5557,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-27428
+  m_Name: pb_Mesh-70252
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -7997,7 +8008,7 @@ PrefabInstance:
       objectReference: {fileID: 1122231069}
     - target: {fileID: 5302287780433949952, guid: 5655694a500f28d49905eb77ebb38ae1, type: 3}
       propertyPath: m_VersionIndex
-      value: 453
+      value: 459
       objectReference: {fileID: 0}
     - target: {fileID: 7839718801397450478, guid: 5655694a500f28d49905eb77ebb38ae1, type: 3}
       propertyPath: m_Mesh
@@ -9115,14 +9126,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7594696348822121080, guid: c8ef476677ca24e5390ca8a281760af2, type: 3}
-      propertyPath: m_ShowToolkit
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7594696348822121080, guid: c8ef476677ca24e5390ca8a281760af2, type: 3}
-      propertyPath: m_ShowCustomSorter
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 4493994089453073866, guid: c8ef476677ca24e5390ca8a281760af2, type: 3}
+      propertyPath: keysUI
+      value: 
+      objectReference: {fileID: 765752657}
     - target: {fileID: 8436259335093492250, guid: c8ef476677ca24e5390ca8a281760af2, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -9238,7 +9245,7 @@ PrefabInstance:
       objectReference: {fileID: 167255466}
     - target: {fileID: 5302287780433949952, guid: 5655694a500f28d49905eb77ebb38ae1, type: 3}
       propertyPath: m_VersionIndex
-      value: 450
+      value: 456
       objectReference: {fileID: 0}
     - target: {fileID: 7839718801397450478, guid: 5655694a500f28d49905eb77ebb38ae1, type: 3}
       propertyPath: m_Mesh
@@ -9594,14 +9601,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2749733387357930943, guid: 7cf19bcf7dc774e9cb44e4d2b50204f0, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 72.48828
-      objectReference: {fileID: 0}
-    - target: {fileID: 2749733387357930943, guid: 7cf19bcf7dc774e9cb44e4d2b50204f0, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -44.548096
-      objectReference: {fileID: 0}
     - target: {fileID: 3611734349803690958, guid: 7cf19bcf7dc774e9cb44e4d2b50204f0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
