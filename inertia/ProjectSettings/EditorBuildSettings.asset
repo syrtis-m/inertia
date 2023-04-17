@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/platform.unity
     guid: a6360520dc56beb4e862958d1b1854d1
   - enabled: 1
-    path: Assets/Scenes/level7.unity
+    path: Assets/Scenes/orrery.unity
     guid: 14b62a077d5ab824c9983e6d0e335a2f
   - enabled: 1
     path: Assets/Scenes/credits.unity

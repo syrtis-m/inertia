@@ -877,7 +877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &178248904
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3467,7 +3467,7 @@ GameObject:
   - component: {fileID: 1531953765}
   - component: {fileID: 1531953768}
   m_Layer: 5
-  m_Name: Level 7
+  m_Name: orrery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5398,7 +5398,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 7
+  m_text: orrery
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e1e66c88a27e45a3b0e93a45d0ae677, type: 2}
   m_sharedMaterial: {fileID: 289557441345057176, guid: 6e1e66c88a27e45a3b0e93a45d0ae677, type: 2}
