@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class kill_player : MonoBehaviour
 {
+    
+    
     //reloads the level if you touch it
     private void OnTriggerEnter(Collider other)
     {

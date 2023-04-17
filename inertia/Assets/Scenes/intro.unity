@@ -1799,6 +1799,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e23c07edccf1849aca92481e6f0cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screenwipeImg: {fileID: 6079695116289033203}
+  screenwipeTime: 0.1
   currentSpawn: 
 --- !u!4 &894072072
 Transform:
@@ -9878,6 +9880,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1f56d89ef9bed34a91caf89d2c043da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6079695116289033203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5990811091296785908, guid: 7cf19bcf7dc774e9cb44e4d2b50204f0, type: 3}
+  m_PrefabInstance: {fileID: 6079695116289033200}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &7456613383759394559

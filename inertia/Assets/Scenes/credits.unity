@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.64532495, g: 0.47888094, b: 0.5354272, a: 1}
+  m_IndirectSpecularColor: {r: 0.6453254, g: 0.47888172, b: 0.5354287, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -758,6 +758,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a45fd588f6f634ef2b3b2d14a6b59e00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &635011233 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5990811091296785908, guid: 7cf19bcf7dc774e9cb44e4d2b50204f0, type: 3}
+  m_PrefabInstance: {fileID: 635011229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &682224255
 Mesh:
   m_ObjectHideFlags: 0
@@ -1016,6 +1027,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e23c07edccf1849aca92481e6f0cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  screenwipeImg: {fileID: 635011233}
+  screenwipeTime: 0.1
   currentSpawn: 
 --- !u!4 &894072072
 Transform:
