@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2626
+  m_Name: pb_Mesh-425084
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -8052,6 +8052,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1879487404 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8848199887342350245, guid: 2a289f71de7de4daea20cda8f03bfdf0, type: 3}
+  m_PrefabInstance: {fileID: 3103977335204578406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1884206209
 Mesh:
   m_ObjectHideFlags: 0
@@ -9662,6 +9673,10 @@ PrefabInstance:
       propertyPath: stopWatch
       value: 
       objectReference: {fileID: 6079695116289033202}
+    - target: {fileID: 5825551857197021683, guid: db97104d62c37c943bf21d5d327c0a8f, type: 3}
+      propertyPath: bestTimeText
+      value: 
+      objectReference: {fileID: 1879487404}
     - target: {fileID: 5825551857197021683, guid: db97104d62c37c943bf21d5d327c0a8f, type: 3}
       propertyPath: pauseMenuScript
       value: 

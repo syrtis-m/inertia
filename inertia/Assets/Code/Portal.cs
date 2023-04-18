@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class Portal : MonoBehaviour
@@ -14,6 +15,7 @@ public class Portal : MonoBehaviour
     public PauseMenu pauseMenuScript;
     public StopWatch stopWatch;
     public TMP_Text timeText;
+    public TMP_Text bestTimeText;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,7 +34,22 @@ public class Portal : MonoBehaviour
     void DisplayTime()
     {
         int time = (int)stopWatch.time;
-        if(time < 60)
+        int index = SceneManager.GetActiveScene().buildIndex;
+        if (!PlayerPrefs.HasKey("Scene" + index))
+        {
+            PlayerPrefs.SetInt("Scene" + index, time);
+        }
+        else
+        {
+            int currentBestScore = PlayerPrefs.GetInt("Scene" + index);
+            if (time < currentBestScore)
+            {
+                PlayerPrefs.SetInt("Scene" + index, time);
+            }
+        }
+        int bestTime = PlayerPrefs.GetInt("Scene" + index);
+
+        if (time < 60)
         {
             timeText.text = "Time: " + time;
         }
@@ -46,6 +63,23 @@ public class Portal : MonoBehaviour
             else
             {
                 timeText.text = "Time: " + minute + ":" + (time % 60);
+            }
+        }
+
+        if (bestTime < 60)
+        {
+            bestTimeText.text = "Best Time: " + bestTime;
+        }
+        else
+        {
+            int bestMinute = bestTime / 60;
+            if ((bestTime % 60) < 10)
+            {
+                bestTimeText.text = "Best Time: " + bestMinute + ":0" + (bestTime % 60);
+            }
+            else
+            {
+                bestTimeText.text = "Best Time: " + bestMinute + ":" + (bestTime % 60);
             }
         }
     }
