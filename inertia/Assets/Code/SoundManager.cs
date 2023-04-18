@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
 
     AudioSource audioSource;
     public AudioClip dashSound;
+    public AudioClip jumpSound;
 
     void Awake()
     {
@@ -22,5 +23,10 @@ public class SoundManager : MonoBehaviour
     public void PlaySoundDash()
     {
         audioSource.PlayOneShot(dashSound);
+    }
+
+    public void PlaySoundJump()
+    {
+        audioSource.PlayOneShot(jumpSound);
     }
 }

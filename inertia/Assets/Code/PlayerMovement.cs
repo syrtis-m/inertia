@@ -78,6 +78,8 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
 
     public Vector3 externalMovement; //used by moving platforms
 
+    public AudioSource RunSound;
+
     /////// unity input stuff ///////
     private void OnEnable()
     {
@@ -111,6 +113,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
         if (jumpCharges > 0)
         {
             Jump();
+            SoundManager.instance.PlaySoundJump();
         }
     }
 
@@ -182,15 +185,25 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
         if (isGrounded)
         {
             GroundedMovement();
+            if (input.x != 0 || input.z != 0)
+            {
+                RunSound.enabled = true;
+            }
+            else
+            {
+                RunSound.enabled = false;
+            }
         }
         else if (!isGrounded && !isWallRunning)
         {
             AirMovement();
+            RunSound.enabled = false;
         }
         else if (isWallRunning)
         {
             WallRunMovement();
             DecreaseSpeed(wallRunSpeedDecrease);
+            RunSound.enabled = true;
         }
         
         

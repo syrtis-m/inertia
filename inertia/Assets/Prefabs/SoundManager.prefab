@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashSound: {fileID: 8300000, guid: 37540c48167499f44ba6419d9f171885, type: 3}
+  jumpSound: {fileID: 8300000, guid: 6514f3f19d7220e4bbcc14399d316e4f, type: 3}
 --- !u!82 &9097574928460531235
 AudioSource:
   m_ObjectHideFlags: 0
@@ -58,7 +59,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
