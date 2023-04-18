@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     private Vector2 MoveComposite;
     private Action OnJumpPerformed;
     public CharacterController controller;
-    
+
     
     public Transform groundCheck;
 
@@ -134,6 +134,8 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
     private void Awake()
     {
         instance = this;
+        
+        //grab initial rotation and make sure character starts with that.
     }
 
     public void ResetPlayer()
@@ -157,6 +159,8 @@ public class PlayerMovement : MonoBehaviour, Controls.IPlayerActions
         //startHeight = transform.localScale.y; don't think this is used, so commenting out
         jumpCharges = 2;
         normalFov = playerCamera.fieldOfView;
+        
+        
     }
 
     void IncreaseSpeed(float speedIncrease)

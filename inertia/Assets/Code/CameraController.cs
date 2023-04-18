@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,12 +10,19 @@ public class CameraController : MonoBehaviour
 
     public Camera cam;
 
-    float rotY = 0f;
-    float rotX = 0f;
+    private float rotY = 0f;
+    private float rotX = 0f;
+
+    //public Vector3 initialRotation = Vector3.zero;
     
 
     PlayerMovement movementScript;
     Mind instance;
+
+    private void Awake()
+    {
+        rotY = gameObject.transform.rotation.eulerAngles.y; //set camera rotation to the transform rotation
+    }
 
     void Start()
     {
