@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2287771621118496582
 MonoBehaviour:
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashSound: {fileID: 8300000, guid: 37540c48167499f44ba6419d9f171885, type: 3}
-  jumpSound: {fileID: 8300000, guid: 6514f3f19d7220e4bbcc14399d316e4f, type: 3}
+  jumpSound: {fileID: 8300000, guid: 249081c3a8c88014cbf18b1d3e77a684, type: 3}
 --- !u!82 &9097574928460531235
 AudioSource:
   m_ObjectHideFlags: 0
