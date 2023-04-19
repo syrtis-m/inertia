@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public static bool isGamePaused = false;
     public bool isGameFinished = false;
     public GameObject pauseMenu;
+    public GameObject optionsPanel;
 
     void Start()
     {
@@ -40,6 +41,14 @@ public class PauseMenu : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 RestartScene();
+            }
+        }
+
+        if (isGamePaused && !isGameFinished)
+        {
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                ShowOptions();
             }
         }
 
@@ -81,5 +90,11 @@ public class PauseMenu : MonoBehaviour
     {
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void ShowOptions()
+    {
+        PauseGame();
+        optionsPanel.SetActive(true);
     }
 }

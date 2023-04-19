@@ -857,7 +857,7 @@ RectTransform:
   - {fileID: 8710865374887465540}
   - {fileID: 345155399904080558}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -940,6 +940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameFinished: 0
   pauseMenu: {fileID: 2526549349570313790}
+  optionsPanel: {fileID: 8080199578928364758}
 --- !u!1 &2526549349570313790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,7 +2182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Options
+  m_text: Options (O)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e1e66c88a27e45a3b0e93a45d0ae677, type: 2}
   m_sharedMaterial: {fileID: 289557441345057176, guid: 6e1e66c88a27e45a3b0e93a45d0ae677, type: 2}
