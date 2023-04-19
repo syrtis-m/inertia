@@ -9807,10 +9807,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8162096950610308979, guid: 2a289f71de7de4daea20cda8f03bfdf0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8826313004055130058, guid: 2a289f71de7de4daea20cda8f03bfdf0, type: 3}
       propertyPath: m_Name
       value: Win Screen

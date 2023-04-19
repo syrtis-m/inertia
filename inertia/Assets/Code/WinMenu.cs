@@ -14,6 +14,12 @@ public class WinMenu : MonoBehaviour
         Mind.instance.EnterScene(nextSceneIndex);
     }
 
+    public void RestartScene()
+    {
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Mind.instance.EnterScene(sceneIndex);
+    }
+
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(0);
