@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1059386361}
-  m_IndirectSpecularColor: {r: 0.64532495, g: 0.47888094, b: 0.5354272, a: 1}
+  m_IndirectSpecularColor: {r: 0.6453254, g: 0.47888172, b: 0.5354287, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9207,6 +9207,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 2526549349570313790, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4909067874011688367, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 6079695116289033201}
     - target: {fileID: 7245610742769725515, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
       propertyPath: m_Pivot.x
       value: 0

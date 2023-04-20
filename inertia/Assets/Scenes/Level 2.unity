@@ -1158,6 +1158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 4909067874011688367, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1757955058}
     - target: {fileID: 7245610742769725515, guid: 5c8897904c26e49029999d5d8a1d37a2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
